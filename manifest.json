@@ -1,0 +1,17 @@
+{
+    "name": "Casio FX-82MS Calculator",
+    "short_name": "FX-82MS",
+    "description": "Casio Calculator",
+    "start_url": "/casio.html",
+    "display": "standalone",
+    "background_color": "#4a4a4a",
+    "theme_color": "#4a4a4a",
+    "icons": [
+      {
+        "src": "/icons/calculator-icon.jpg",
+        "type": "image/jpg",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  

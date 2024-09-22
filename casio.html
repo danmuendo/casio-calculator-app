@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casio FX-82MS Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log('Service Worker registered!'))
+        .catch(error => console.error('Service Worker registration failed:', error));
+      }
+    </script>
+
+</head>
+<body>
+    <div class="calculator">
+        <div class="brand">CASIO</div>
+        <div class="model">fx-82MS</div>
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="function-key" onclick="toggleShift()">Shift</button>
+            <button class="function-key">Alpha</button>
+            <button class="big-button function-key">Mode</button>
+            <button class="function-key">On</button>
+
+            <button class="function-key" onclick="appendToDisplay('1/')">x<sup>-1</sup></button>
+            <button class="function-key" onclick="calculateCombinations()">nCr</button>
+            <button class="function-key">Pol(</button>
+            <button class="function-key">Rec(</button>
+            <button class="function-key" onclick="appendToDisplay('**3')">x<sup>3</sup></button>
+
+            <button class="function-key" onclick="calculateSquareRoot()">√</button>
+            <button class="function-key" onclick="appendToDisplay('**2')">x<sup>2</sup></button>
+            <button class="function-key" onclick="appendToDisplay('^')">^</button>
+            <button class="function-key" onclick="appendToDisplay('Math.log10(')">log</button>
+            <button class="function-key" onclick="appendToDisplay('Math.log(')">ln</button>
+
+            <button class="function-key" onclick="appendToDisplay('(-')">(-)</button>
+            <button class="function-key">°'"</button>
+            <button class="function-key">hyp</button>
+            <button class="function-key" onclick="calculateTrig('sin')">sin</button>
+            <button class="function-key" onclick="calculateTrig('cos')">cos</button>
+
+            <button class="function-key" onclick="recallMemory()">RCL</button>
+            <button class="function-key">ENG</button>
+            <button class="function-key" onclick="appendToDisplay('(')">(</button>
+            <button class="function-key" onclick="appendToDisplay(')')">)</button>
+            <button class="function-key" onclick="calculateTrig('tan')">tan</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator-key" onclick="deleteLast()">DEL</button>
+            <button class="operator-key" onclick="clearDisplay()">AC</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator-key" onclick="appendToDisplay('*')">×</button>
+            <button class="operator-key" onclick="appendToDisplay('/')">/</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator-key" onclick="appendToDisplay('+')">+</button>
+            <button class="operator-key" onclick="appendToDisplay('-')">-</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="appendToDisplay('×10^')">EXP</button>
+            <button class="operator-key" onclick="recallMemory()">Ans</button>
+            <button class="operator-key" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
