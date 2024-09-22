@@ -1,7 +1,7 @@
 const CACHE_NAME = 'fx82ms-cache-v1';
 const urlsToCache = [
   '/',
-  '/casio.html',
+  '/index.html',
   '/styles.css',
   '/script.js',
   '/icons/calculator-icon.jpg'
